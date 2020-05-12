@@ -85,6 +85,7 @@ class Siswa extends REST_Controller
 		// $this->some_model->update_user( ... );
 		$data = [
 			'id_sekolah' => $this->post('id_sekolah'),
+			'nisn' => $this->post('nisn'),
 			'nama_siswa' => $this->post('nama_siswa'),
 			'alamat_siswa' => $this->post('alamat_siswa'),
 			'rata_rata_un' => $this->post('rata_rata_un')
@@ -111,6 +112,7 @@ class Siswa extends REST_Controller
 		$data = array(
 			'id_siswa' => $this->put('id_siswa'),
 			'id_sekolah' => $this->put('id_sekolah'),
+			'nisn' => $this->put('nisn'),
 			'nama_siswa' => $this->put('nama_siswa'),
 			'alamat_siswa' => $this->put('alamat_siswa'),
 			'rata_rata_un' => $this->put('rata_rata_un')
