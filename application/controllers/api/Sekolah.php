@@ -79,8 +79,6 @@ class Sekolah extends REST_Controller
 	{
 		// $this->some_model->update_user( ... );
 		$data = [
-			'username' => $this->post('username'),
-			'password' => MD5($this->post('password')),
 			'nama_sekolah' => $this->post('nama_sekolah'),
 			'alamat_sekolah' => $this->post('alamat_sekolah'),
 			'kota_kabupaten' => $this->post('kota_kabupaten'),
@@ -97,8 +95,7 @@ class Sekolah extends REST_Controller
 		// $this->some_model->delete_something($id);
 
 		$id = $this->delete('id_sekolah');
-		$this->db->where('id_sekolah', $id);
-		$this->db->delete('sekolah');
+		$this->db->query("DELETE FROM sekolah WHERE id_sekolah = '$id'");
 		$messages = array('status' => "Sekolah dihapus");
 		$this->set_response($messages, REST_Controller::HTTP_NO_CONTENT); // NO_CONTENT (204) being the HTTP response code
 	}
@@ -106,8 +103,6 @@ class Sekolah extends REST_Controller
 	public function index_put()
 	{
 		$data = array(
-			'username' => $this->put('username'),
-			'password' => MD5($this->put('password')),
 			'nama_sekolah' => $this->put('nama_sekolah'),
 			'alamat_sekolah' => $this->put('alamat_sekolah'),
 			'kota_kabupaten' => $this->put('kota_kabupaten'),
