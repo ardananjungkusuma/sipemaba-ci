@@ -40,10 +40,11 @@ class Pendaftaran extends REST_Controller
 	{
 		// Users from a data store e.g. database
 		$id = $this->get('id');
+		$nisn = $this->get('nisn');
 
 		// If the id parameter doesn't exist return all the users
 
-		if ($id === NULL) {
+		if ($id === NULL && $nisn === NULL) {
 
 			$this->db->select('*');
 			$this->db->from('pendaftaran p');
@@ -64,7 +65,7 @@ class Pendaftaran extends REST_Controller
 		}
 
 		// Find and return a single record for a particular user.
-		else {
+		elseif ($id !== NULL) {
 			$id = (int) $id;
 
 			// Validate the id.
@@ -78,6 +79,16 @@ class Pendaftaran extends REST_Controller
 			$this->db->join('sekolah s', 'p.id_sekolah = s.id_sekolah');
 			$this->db->join('siswa sis', 'p.id_siswa = sis.id_siswa');
 			$this->db->where(array("id_daftar" => $id));
+			$pendaftaran = $this->db->get()->row_array();
+
+			$this->response($pendaftaran, REST_Controller::HTTP_OK);
+		} elseif ($nisn !== NULL) {
+			$nisn = (int) $nisn;
+			$this->db->select('*');
+			$this->db->from('pendaftaran p');
+			$this->db->join('sekolah s', 'p.id_sekolah = s.id_sekolah');
+			$this->db->join('siswa sis', 'p.id_siswa = sis.id_siswa');
+			$this->db->where(array("nisn" => $nisn));
 			$pendaftaran = $this->db->get()->row_array();
 
 			$this->response($pendaftaran, REST_Controller::HTTP_OK);
