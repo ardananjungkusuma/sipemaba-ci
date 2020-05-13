@@ -1,7 +1,12 @@
-<h1>Kuis Pemrograman Web Lanjut Semester 4<h1><br>
-Nama Kelompok :<br>
-<h3>1. Ardan Anjung Kusuma<br>
-2. Sugeng Prastiyo<br>
-Kelas : TI-2B</h3>
+## Tugas Akhir PWL 2020
 
-[Link Laporan Gitbook](https://ardananjungkusuma.gitbook.io/laporan-website-inventarisjti/)
+SIPEMABA (Sistem Informasi Penerimaan Mahasiswa Baru)
+
+[REST Client Source Code](https://github.com/ardananjungkusuma/sipemaba-laravel)
+
+[Database SQL File](https://github.com/ardananjungkusuma/sipemaba-ci/tree/master/db_sql_file)
+
+Anggota : 
+
+1. Ardan Anjung Kusuma (1841720041)
+2. Sugeng Prastiyo (1841720113)
