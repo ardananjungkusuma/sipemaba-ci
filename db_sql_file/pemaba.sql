@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 12, 2020 at 04:45 PM
+-- Generation Time: May 13, 2020 at 08:12 AM
 -- Server version: 10.3.15-MariaDB
 -- PHP Version: 7.3.6
 
@@ -30,7 +30,6 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `pendaftaran` (
   `id_daftar` int(11) NOT NULL,
-  `id_sekolah` int(11) NOT NULL,
   `id_siswa` int(11) NOT NULL,
   `perguruan_tinggi` varchar(25) NOT NULL,
   `jurusansatu` varchar(25) NOT NULL,
@@ -42,10 +41,11 @@ CREATE TABLE `pendaftaran` (
 -- Dumping data for table `pendaftaran`
 --
 
-INSERT INTO `pendaftaran` (`id_daftar`, `id_sekolah`, `id_siswa`, `perguruan_tinggi`, `jurusansatu`, `jurusandua`, `status_penerimaan`) VALUES
-(1, 2, 2, 'Universitas Bojonegoro', 'Teknik Sipil', 'Teknik Kimia', 'Menunggu Seleksi'),
-(2, 2, 4, 'Universitas Indonesia', 'Dokter Umum', 'Dokter Bedah', 'Menunggu Seleksi'),
-(3, 3, 3, 'Universitas Brawijaya', 'Hukum', 'Pertanian', 'Menunggu Seleksi');
+INSERT INTO `pendaftaran` (`id_daftar`, `id_siswa`, `perguruan_tinggi`, `jurusansatu`, `jurusandua`, `status_penerimaan`) VALUES
+(4, 1, 'Universitas Bojonegoro', 'Teknik Sipil', 'Teknik Kimia', 'Menunggu Seleksi'),
+(5, 4, 'Universitas Brawijaya', 'Dokter Umum', 'Pertanian', 'Menunggu Seleksi'),
+(6, 5, 'Universitas Gadjah Mada', 'Teknik Industri', 'Teknik Elektro', 'Menunggu Seleksi'),
+(7, 12, 'Politeknik Negeri Malang', 'Teknik Informatika', 'Manajemen Informatika', 'Menunggu Seleksi');
 
 -- --------------------------------------------------------
 
@@ -111,7 +111,6 @@ INSERT INTO `siswa` (`id_siswa`, `id_sekolah`, `nisn`, `nama_siswa`, `alamat_sis
 --
 ALTER TABLE `pendaftaran`
   ADD PRIMARY KEY (`id_daftar`),
-  ADD KEY `id_sekolah` (`id_sekolah`),
   ADD KEY `id_siswa` (`id_siswa`);
 
 --
@@ -135,7 +134,7 @@ ALTER TABLE `siswa`
 -- AUTO_INCREMENT for table `pendaftaran`
 --
 ALTER TABLE `pendaftaran`
-  MODIFY `id_daftar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_daftar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `sekolah`
@@ -157,7 +156,6 @@ ALTER TABLE `siswa`
 -- Constraints for table `pendaftaran`
 --
 ALTER TABLE `pendaftaran`
-  ADD CONSTRAINT `pendaftaran_ibfk_1` FOREIGN KEY (`id_sekolah`) REFERENCES `sekolah` (`id_sekolah`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `pendaftaran_ibfk_2` FOREIGN KEY (`id_siswa`) REFERENCES `siswa` (`id_siswa`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
