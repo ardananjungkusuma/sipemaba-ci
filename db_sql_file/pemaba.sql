@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 13, 2020 at 08:12 AM
+-- Generation Time: May 13, 2020 at 03:30 PM
 -- Server version: 10.3.15-MariaDB
 -- PHP Version: 7.3.6
 
@@ -45,7 +45,8 @@ INSERT INTO `pendaftaran` (`id_daftar`, `id_siswa`, `perguruan_tinggi`, `jurusan
 (4, 1, 'Universitas Bojonegoro', 'Teknik Sipil', 'Teknik Kimia', 'Menunggu Seleksi'),
 (5, 4, 'Universitas Brawijaya', 'Dokter Umum', 'Pertanian', 'Menunggu Seleksi'),
 (6, 5, 'Universitas Gadjah Mada', 'Teknik Industri', 'Teknik Elektro', 'Menunggu Seleksi'),
-(7, 12, 'Politeknik Negeri Malang', 'Teknik Informatika', 'Manajemen Informatika', 'Menunggu Seleksi');
+(7, 12, 'Politeknik Negeri Malang', 'Teknik Informatika', 'Manajemen Informatika', 'Menunggu Seleksi'),
+(8, 2, 'Politeknik Negeri Malang', 'Teknik Kimia', 'Manajemen Informatika', 'Menunggu Seleksi');
 
 -- --------------------------------------------------------
 
@@ -134,7 +135,7 @@ ALTER TABLE `siswa`
 -- AUTO_INCREMENT for table `pendaftaran`
 --
 ALTER TABLE `pendaftaran`
-  MODIFY `id_daftar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_daftar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `sekolah`
